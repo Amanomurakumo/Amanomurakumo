@@ -17,6 +17,7 @@ var score=0;
 
 //起動処理
 function setup(){
+    setFPS(30);
     canvasSize(1200,800);
     lineW(3);
     loadImg(0,"image/mutsu.jpg");
@@ -58,7 +59,7 @@ function mainloop(){
     if(barX-60<ballX1&&ballX1<barX+60&&barY-20>ballY1&&ballY1>barY-40){
         ballYp1=-ballYp1-rnd(5);//面白くするために、バーで跳ね返ったらボールの速さを変える
         score=score+100;
-        playSE(0);
+        playSE(0);//ここでプログラムが止まる。でも、デバッグで再開したとき、たまによくなることがあるのが意味不明。2023/1/12 0:15
     }
  
 }
